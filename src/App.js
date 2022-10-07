@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+// import Usestate from "./Usestate";
+// import Useeffect from './UseEffect';
+// import Usememo from './Usememo';
+// import Usecallbacks from './Usecallbacks';
+// import Usecontext from "./Usecontext";
+// import Useref from "./Useref";
+// import CustomHook from "./CustomHook";
+// import Todo from "./Todo/home"
+import HOC from "./HOC/index";
+import React from "react";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.StrictMode>
+      <div className="App">
+       <HOC/>
+      </div>
+    </React.StrictMode>
   );
 }
 
