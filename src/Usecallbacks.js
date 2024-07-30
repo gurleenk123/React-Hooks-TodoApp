@@ -14,6 +14,13 @@ export default function Usecallbacks() {
     setSalary(salary + 1000);
   }, [salary]);
 
+  //useCallback is primarily used to optimize the performance of components that receive callback functions as props,
+  // which can include both parent and child components.
+  //When passing callback functions to child components as props, using useCallback can prevent unnecessary re-renders of
+  //those child components. This is because useCallback memoizes the function, ensuring that it remains the same between
+  //re-renders as long as its dependencies haven't changed.
+
+
   return (
     <div>
       <Count text="Age" count={age} />

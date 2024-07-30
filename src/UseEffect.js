@@ -1,37 +1,38 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Useeffect() {
   const [time, setTime] = useState(new Date().toString());
-  const [message,setMessage] = useState("Function component");
-  function handleclick(){
+  const [message, setMessage] = useState("Function component");
+  function handleclick() {
     setMessage("Changed component")
   }
-  useEffect(()=>{
+  useEffect(() => {
     console.log('component mounted or updated');
   })
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log('Time updated');
-      // The return statement is for componentWillUnmount
-  return () => console.log('component will unmount')
-  },[time]);
+    // The return statement is for componentWillUnmount
+    return () => console.log('component will unmount')
+  }, [time]);
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log('componentDidUpdate');  // will work once initially only
-  },[]);
+  }, []);
 
 
-  function timechange(){
-   setTime(new Date().toString());
+  
+  function timechange() {
+    setTime(new Date().toString());
   }
   //always return will run first
   return (
-    
-    <>   
-    <h1>{message}</h1>
-    <button onClick={handleclick}>Click Button</button>
-    <p>{time}</p>
-    <button onClick={timechange}>Change Time</button>
+
+    <>
+      <h1>{message}</h1>
+      <button onClick={handleclick}>Click Button</button>
+      <p>{time}</p>
+      <button onClick={timechange}>Change Time</button>
     </>
 
   )
